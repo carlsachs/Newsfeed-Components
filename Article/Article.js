@@ -112,7 +112,7 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
-function createArticle(title, date, p1, p2, p3){
+function createArticle(obj){
 
   const article = document.createElement('div');
   const title = document.createElement('h2');
@@ -122,27 +122,40 @@ function createArticle(title, date, p1, p2, p3){
   const p3 = document.createElement('p');
   const span = document.createElement('span');
 
-  article.append('title');
-  article.append('date');
-  article.append('p1');
-  article.append('p2');
-  article.append('p3');
-  article.append('span')
+  article.append(title)
+  article.append(date)
+  article.append(p1)
+  article.append(p2)
+  article.append(p3)
+  article.append(span)
 
   article.classList.add('article');
   date.classList.add('date');
   span.classList.add('expandButton');
 
-  title.textContent = 'title';
-  date.textContent = 'date';
-  p1.textContent = 'p1';
-  p2.textContent = 'p2';
-  p3.textContent = 'p3';
+  title.textContent = obj.title;
+  date.textContent = obj.date;
+  p1.textContent = obj.firstParagraph;
+  p2.textContent = obj.secondParagraph;
+  p3.textContent = obj.thirdParagraph;
+  span.textContent = "button"
 
   span.addEventListener("click", () => {
-    article.classList('article-open')
+    article.classList.add('article-open')
+
+    // if ('article-open' === true){
+  //   span.addEventListener("click", () =>{
+  //     article.classList.add('article-close')
+  //   })
+  // }
+  article.classList.forEach()
   });
 
-  return article;
-
+  return article
 }
+const body = document.querySelector('body')
+body.style.marginTop = "250px"
+
+data.map( element => {
+  body.prepend(createArticle(element))
+});
