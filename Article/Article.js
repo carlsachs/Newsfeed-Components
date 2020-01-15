@@ -120,6 +120,20 @@ function createArticle(title, date, p1, p2, p3){
   const p1 = document.createElement('p');
   const p2 = document.createElement('p');
   const p3 = document.createElement('p');
+  const span = document.createElement('span');
+
+  article.append('title');
+  article.append('date');
+  article.append('p1');
+  article.append('p2');
+  article.append('p3');
+  article.append('span')
+
+  article.classList.add('article');
+  date.classList.add('date');
+  span.classList.add('expandButton');
+
+  span.addEventListener()
 
 
 }
