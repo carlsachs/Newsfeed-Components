@@ -133,7 +133,16 @@ function createArticle(title, date, p1, p2, p3){
   date.classList.add('date');
   span.classList.add('expandButton');
 
-  span.addEventListener()
+  title.textContent = 'title';
+  date.textContent = 'date';
+  p1.textContent = 'p1';
+  p2.textContent = 'p2';
+  p3.textContent = 'p3';
 
+  span.addEventListener("click", () => {
+    article.classList('article-open')
+  });
+
+  return article;
 
 }
