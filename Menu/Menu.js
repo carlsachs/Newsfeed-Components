@@ -42,21 +42,27 @@ let menuItems = [
   'Log Out'
 ];
 
-function createMenu (arr) {
+function createMenu (menuItems) {
   const menu = document.createElement('div')
-  const unordered = document.createElement('ul')
-  const students = document.createElement('li')
-  const faculty = document.createElement('li')
-  const whatsnew = document.createElement('li')
-  const tech = document.createElement('li')
-  const music = document.createElement('li')
-  const logout = document.createElement('li')
+  const ul = document.createElement('ul')
 
-  unordered.append(menu)
-  students.append(unordered)
-  faculty.append(unordered)
-  whatsnew.append(unordered)
-  tech.append(unordered)
-  music.append(unordered)
-  logout.append(unordered)
+  menu.append(ul)
+
+  menu.classList.add('menu')
+
+  menuItems.forEach(menuItems => {
+    const li = document.createElement('li')
+    li.textContent = menuItems;
+    ul.append(li)
+  })
+
+  const menuButton = document.querySelector('.menu-button');
+
+  menuButton.addEventListener("click", () => {
+    menu.classList.toggle(".menu--open")
+  })
+
+  return menu
 }
+const header = document.querySelector('.header')
+  header.append(createMenu(menuItems))
