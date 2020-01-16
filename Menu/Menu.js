@@ -1,13 +1,13 @@
 /* This is the data we will be using, study it but don't change anything, yet. */
 
-let menuItems = [
-  'Students',
-  'Faculty',
-  "What's New",
-  'Tech Trends',
-  'Music',
-  'Log Out'
-];
+// let menuItems = [
+//   'Students',
+//   'Faculty',
+//   "What's New",
+//   'Tech Trends',
+//   'Music',
+//   'Log Out'
+// ];
 
 /* 
 
@@ -33,3 +33,30 @@ let menuItems = [
   Step 6: add the menu component to the DOM.
   
 */
+let menuItems = [
+  'Students',
+  'Faculty',
+  "What's New",
+  'Tech Trends',
+  'Music',
+  'Log Out'
+];
+
+function createMenu (arr) {
+  const menu = document.createElement('div')
+  const unordered = document.createElement('ul')
+  const students = document.createElement('li')
+  const faculty = document.createElement('li')
+  const whatsnew = document.createElement('li')
+  const tech = document.createElement('li')
+  const music = document.createElement('li')
+  const logout = document.createElement('li')
+
+  unordered.append(menu)
+  students.append(unordered)
+  faculty.append(unordered)
+  whatsnew.append(unordered)
+  tech.append(unordered)
+  music.append(unordered)
+  logout.append(unordered)
+}
