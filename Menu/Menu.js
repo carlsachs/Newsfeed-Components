@@ -41,52 +41,28 @@ let menuItems = [
   'Music',
   'Log Out'
 ];
+const menuButton = document.querySelector('.menu-button');
 
-// function createMenu (menuItems) {
-//   const menu = document.createElement('div')
-//   const ul = document.createElement('ul')
-
-//   menu.append(ul)
-
-//   menu.classList.add('menu')
-
-//   menuItems.forEach(menuItems => {
-//     const li = document.createElement('li')
-//     li.textContent = menuItems;
-//     ul.append(li)
-//   })
-
-//   const menuButton = document.querySelector('.menu-button');
-
-//   menuButton.addEventListener("click", () => {
-//     menu.classList.toggle(".menu--open")
-//   })
-
-//   return menu
-// }
-// const header = document.querySelector('.header')
-//   header.append(createMenu(menuItems))
-const buttonSelect = document.querySelector('.menu-button');
-
-const addToMenu = document.querySelector('.header');
-addToMenu.appendChild(menuItems);
-
-function itemMenu(array){
-  const divClassMenu = document.createElement('div');
+function createMenu(arr){
+  const menu = document.createElement('div');
   const ul = document.createElement('ul');
 
-  divClassMenu.classList.add('menu');
+  menu.append(ul);
 
-  manuItems.forEach((element) => {
+  menu.classList.add('menu');
+
+  arr.forEach(element => {
     const li = document.createElement('li');
     li.textContent = element;
-    ul.appendChild(li);
+    ul.append(li);
   });
 
-  divClassMenu.appendChild(ul);
-
-  buttonSelect.addEventListener('click', () => {
-    divClassMenu.classList.toggle('menu--open')
+  menuButton.addEventListener('click', () => {
+    menu.classList.toggle('menu--open')
   });
-  return divClassMenu;
+
+  return menu;
 }
+
+const header = document.querySelector('.header');
+header.appendChild(createMenu(menuItems));
